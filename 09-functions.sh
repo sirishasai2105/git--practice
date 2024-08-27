@@ -20,6 +20,8 @@ VALIDATE()
     fi
 }
 
+CHECK_ROOT()
+
 dnf list installed git
 
 if [ $? -eq 0 ]
@@ -34,7 +36,7 @@ dnf list installed mysql
 
 if [ $? -eq 0 ]
 then
-    echo "GIT is already installed , Nothing to do"
+    echo "MYSQL is already installed , Nothing to do"
 else
     dnf install git -y
     VALIDATE $? "MYSQL"
