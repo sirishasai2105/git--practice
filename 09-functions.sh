@@ -20,7 +20,7 @@ VALIDATE()
     fi
 }
 
-CHECK_ROOT()
+CHECK_ROOT
 
 dnf list installed git
 
