@@ -1,6 +1,11 @@
 #!/bin/bash
 USER_ID=$(id -u)
 
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
+
 CHECK_ROOT()
 {
     if [ $USER_ID -ne 0]
@@ -14,9 +19,9 @@ VALIDATE()
 {
     if [ $1 -eq 0 ]
     then 
-        echo "$2 installation is SUCCEEDED"
+        echo -e "$2 installation is $G SUCCEEDED $N"
     else
-         echo "$2 installation is FAILED"
+         echo -e "$2 installation is $R FAILED $N"
          exit 1
     fi
 }
@@ -27,9 +32,9 @@ dnf list installed git
 
 if [ $? -eq 0 ]
 then
-    echo "GIT is already installed , Nothing to do"
+    echo -e " $G GIT is already installed , Nothing to do $N"
 else
-    echo "GIT is not installed , Going to install"
+    echo -e " $R GIT is not installed , Going to install $N"
     dnf install git -y
     VALIDATE $? "GIT"
 fi
@@ -38,9 +43,9 @@ dnf list installed mysql
 
 if [ $? -eq 0 ]
 then
-    echo "MYSQL is already installed , Nothing to do"
+    echo " $G MYSQL is already installed , Nothing to do $N"
 else
-    echo "MYSQL is not installed going to install"
+    echo "$R MYSQL is not installed going to install $N"
     dnf install mysql -y
     VALIDATE $? "MYSQL"
 fi
