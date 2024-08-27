@@ -10,4 +10,4 @@ read second_number
 
 sum= $(($first_number+$second_number))
 
-echo "The sum of $firstnumber and $secondnumber is:: $sum"
+echo "The sum of $first_number and $second_number is:: $sum"
