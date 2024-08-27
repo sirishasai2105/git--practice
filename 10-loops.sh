@@ -3,8 +3,8 @@
 LOG_FOLDER=/var/log/shell-script
 SCRIPT_NAME=$(echo "$0" | cut -d "." -f1)
 TIME_STAMP=$(date +%Y-%m-%d-%H-%M-%S)
-LOG_FILE=/tmp/$SCRIPT_NAME-$TIME_STAMP.log
-#mkdir /var/log/shell-script
+LOG_FILE=$LOGS_FOLDER/$SCRIPT_NAME-$TIME_STAMP.log
+mkdir -p LOG_FOLDER
 
 
 
@@ -43,7 +43,7 @@ do
         echo "$package Installation is completed , Nothing to do" | tee -a $LOG_FILE
     else
         echo "$package Installation is not done,Trying to install it now" | tee -a $LOG_FILE
-        dnf install $package -y
+        dnf install $package -y &>>$LOG_FILE
         VALIDATE $? "$package"
     fi
 done
