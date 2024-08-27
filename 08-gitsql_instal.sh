@@ -24,3 +24,20 @@ else
         exit 1
     fi
 fi
+
+dnf list installed git
+
+if [ $? -eq 0 ]
+then
+    echo "GIT is already installed nothing to do"
+else
+    echo "GIT is not installed going to install"
+    dnf install git -y
+    if [ $? -eq 0]
+    then
+        echo "GiT installation is SUCCESS"
+    else
+        echo "GIT installation is FAILED"
+        exit 1
+    fi 
+fi
