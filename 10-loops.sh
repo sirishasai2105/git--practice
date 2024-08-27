@@ -14,7 +14,7 @@ USER_ID=$(id -u)
 
 CHECK_ROOT()
 {
-    if [ USER_ID -ne 0 ]
+    if [ $USER_ID -ne 0 ]
     then 
         echo "Get Root Access First and then continue installing" | tee -a $LOG_FILE
         exit 1
