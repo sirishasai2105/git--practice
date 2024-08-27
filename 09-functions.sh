@@ -43,7 +43,7 @@ dnf list installed mysql
 
 if [ $? -eq 0 ]
 then
-    echo " $G MYSQL is already installed , Nothing to do $N"
+    echo "$G MYSQL is already installed , Nothing to do $N"
 else
     echo "$R MYSQL is not installed going to install $N"
     dnf install mysql -y
