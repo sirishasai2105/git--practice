@@ -3,8 +3,8 @@
 LOG_FOLDER=/var/log/shell-script
 SCRIPT_NAME=$(echo "$0" | cut -d "." -f1)
 TIME_STAMP=$(date +%Y-%m-%d-%H-%M-%S)
-LOG_FILE=LOG_FOLDER/SCRIPT_NAME-TIME_STAMP
-mkdir /var/log/shell-script
+LOG_FILE=/tmp/$SCRIPT_NAME-$TIME_STAMP.log
+#mkdir /var/log/shell-script
 
 
 
