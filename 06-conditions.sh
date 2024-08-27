@@ -9,3 +9,4 @@ then
     echo "entered number $number is greater than 20"
 else
     echo "entered number $number is less than 20"
+fi    
