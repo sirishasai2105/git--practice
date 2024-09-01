@@ -16,4 +16,5 @@ echo "LOG FILES ARE : $FILES"
 while IFS= read -r line
 do
     echo "Files that iam going to delete are: $line"
+    rm -rf $line
 done <<< $FILES
