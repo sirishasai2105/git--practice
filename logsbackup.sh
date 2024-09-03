@@ -10,7 +10,7 @@ then
     exit 1
 fi
 
-if [ -z $SOURCE_DIR ]
+if [ -d $SOURCE_DIR ]
 then 
     echo "source directory exists"
 fi
