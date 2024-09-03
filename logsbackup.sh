@@ -13,17 +13,18 @@ fi
 if [ -z $SOURCE_DIR ]
 then 
     echo "source directory exists"
-else
-    echo "source directory doesn't exist"
-    exit 1
 fi
+# else
+#     echo "source directory doesn't exist"
+#     exit 1
+# fi
 
 
-if [ -z $DESTINATION_DIR ]
-then 
-    echo "destination directory exists"
-else
-    echo "destination directory doesn't exist"
-    exit 1
-fi
+# if [ -z $DESTINATION_DIR ]
+# then 
+#     echo "destination directory exists"
+# else
+#     echo "destination directory doesn't exist"
+#     exit 1
+# fi
 
