@@ -34,3 +34,5 @@ echo "$FILES"
 ZIP_FILE=$DESTINATION_DIR/app-logs-$TIME_STAMP.zip
 find ${SOURCE_DIR} -name "*.log" -mtime +14 | zip "$ZIP_FILE" -@
 echo "zipped files are : $ZIP_FILE"
+
+echo "files in the source dir are : $FILES"
