@@ -35,7 +35,7 @@ ZIP_FILE=$DESTINATION_DIR/app-logs-$TIME_STAMP.zip
 find ${SOURCE_DIR} -name "*.log" -mtime +14 | zip "$ZIP_FILE" -@
 echo "zipped files are : $ZIP_FILE"
 
-if [ -s $ZIP_FILE ]
+if [ -s "$ZIP_FILE" ]
 then 
     echo "successfully zipped the files into the destination folder"
     while IFS= read -r file
