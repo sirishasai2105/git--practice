@@ -3,6 +3,7 @@
 SOURCE_DIR=$1
 DESTINATION_DIR=$2
 DAYS=${3:-14}
+TIME_STAMP=$(date +%Y-%m-%d-%H-%M-%S)
 
 if [ $# -lt 2 ]
 then 
@@ -30,6 +31,6 @@ fi
 FILES=$(find $SOURCE_DIR -name "*.log" -mtime +14)
 echo "$FILES"
 
-ZIP_FILE=|find $SOURCE_DIR -name "*.log" -mtime +14| zip "$DESTINATION_DIR" -@
-
+ZIP_FILE=$DESTINATION_DIR/app-logs-$TIME_STAMP.zip
+find ${SOURCE_DIR} -name "*.log" -mtime +14 | zip "$ZIP_FILE" -@
 echo "zipped files are : $ZIP_FILE"
