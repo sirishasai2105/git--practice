@@ -42,4 +42,8 @@ do
 
 done <<< $FILES
 
-echo "source directory files are::$FILES"
+if [ -d $SOURCE_DIR ]
+then 
+    echo "Source directory is not empty"
+else
+    echo "Source directory is empty .. All files are zipped into the Destination directory"
