@@ -30,6 +30,6 @@ fi
 FILES=$(find $SOURCE_DIR -name "*.log" -mtime +14)
 echo "$FILES"
 
-ZIP_FILE=$FILES|zip $DESTINATION_DIR -@
+ZIP_FILE=|find $SOURCE_DIR -name "*.log" -mtime +14| zip "$DESTINATION_DIR" -@
 
 echo "zipped files are : $ZIP_FILE"
