@@ -35,10 +35,10 @@ ZIP_FILE=$DESTINATION_DIR/app-logs-$TIME_STAMP.zip
 find ${SOURCE_DIR} -name "*.log" -mtime +14 | zip "$ZIP_FILE" -@
 echo "zipped files are : $ZIP_FILE"
 
-while IFS= read -r line
+while IFS= read -r file
 do
-    echo "deleting $line in source directory"
-    rm -rf $line
+    echo "deleting $file in source directory"
+    rm -rf $file
 
 done <<< $FILES
 
