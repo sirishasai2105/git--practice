@@ -13,7 +13,6 @@ fi
 if [ -d $SOURCE_DIR ]
 then 
     echo "source directory exists"
-fi
 else
     echo "source directory doesn't exist"
     exit 1
