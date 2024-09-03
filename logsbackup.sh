@@ -35,15 +35,16 @@ ZIP_FILE=$DESTINATION_DIR/app-logs-$TIME_STAMP.zip
 find ${SOURCE_DIR} -name "*.log" -mtime +14 | zip "$ZIP_FILE" -@
 echo "zipped files are : $ZIP_FILE"
 
-while IFS= read -r file
-do
-    echo "deleting $file in source directory"
-    rm -rf $file
-
-done <<< $FILES
-if [ -d $SOURCE_DIR ]
+if [ -f $ZIP_FILE ]
 then 
-    echo "Source directory is not empty"
+    echo "successfully zipped the files into the destination folder"
+    while IFS= read -r file
+    do
+        echo "deleting $file in source directory"
+        rm -rf $file
+
+    done <<< $FILES
 else
-    echo "Source directory is empty .. All files are zipped into the Destination directory"
+    echo "Zipping is failed please4 check it"
 fi
+
