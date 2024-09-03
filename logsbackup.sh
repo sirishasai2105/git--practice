@@ -29,7 +29,7 @@ fi
 
 FILES=$(find $SOURCE_DIR -name "*.log" -mtime +14)
 echo "$FILES"
-if [ -n $FILES ]
+if [ -f "$FILES" ]
 then 
     echo "log files found"
 fi
